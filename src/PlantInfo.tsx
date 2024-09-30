@@ -3,7 +3,7 @@ import { IPlant } from "./dataInterfaces";
 interface Props {
   plant: IPlant;
 }
-
+//nishbar be id = f66ad303-c2ff-55ac-8689-036553b740fe
 export default function PlantInfo({ plant }: Props) {
   return (
     <>
@@ -27,25 +27,29 @@ export default function PlantInfo({ plant }: Props) {
                   <br />
                   <strong>Origin:</strong> {plant.Origin.join(", ")}
                   <br />
-                  <strong>Style:</strong> {plant.Style}
+                  <strong>Style:</strong> {plant.Style ?? ""}
                   <br />
                   <strong>Growth:</strong> {plant.Growth}
                   <br />
-                  <strong>Height at Purchase:</strong>{" "}
-                  {plant["Height at purchase"].M}m /{" "}
-                  {plant["Height at purchase"].CM}cm
+                  <strong>Height at Purchase:</strong>
+                  {plant["Height at purchase"]?.M ?? 0}m /
+                  {plant["Height at purchase"]?.CM ?? 0}
+                  cm
                   <br />
                   <strong>Width at Purchase:</strong>{" "}
-                  {plant["Width at purchase"].M}m /
-                  {plant["Width at purchase"].CM}
+                  {plant["Width at purchase"]?.M ?? 0}m /
+                  {plant["Width at purchase"]?.CM ?? 0}
                   cm
                   <br />
                   <strong>Height Potential:</strong>{" "}
-                  {plant["Height potential"].M}m /{plant["Height potential"].CM}
+                  {plant["Height potential"]?.M ?? 0}m /
+                  {plant["Height potential"]?.CM ?? 0}
                   cm
                   <br />
-                  <strong>Width Potential:</strong> {plant["Width potential"].M}
-                  m /{plant["Width potential"].CM}cm
+                  <strong>Width Potential:</strong>{" "}
+                  {plant["Width potential"]?.M ?? 0}m /
+                  {plant["Width potential"]?.CM ?? 0}
+                  cm
                   <br />
                   <strong>Light Tolerated:</strong> {plant["Light tolered"]}
                   <br />
@@ -60,11 +64,15 @@ export default function PlantInfo({ plant }: Props) {
                   <br />
                   <strong>Zone:</strong> {plant.Zone.join(", ")}
                   <br />
-                  <strong>Temperature Min:</strong> {plant["Temperature min"].F}
-                  °F / {plant["Temperature min"].C}°C
+                  <strong>Temperature Min:</strong>{" "}
+                  {plant["Temperature min"]?.F ?? 0}
+                  °F / {plant["Temperature min"]?.C ?? 0}
+                  °C
                   <br />
-                  <strong>Temperature Max:</strong> {plant["Temperature max"].F}
-                  °F / {plant["Temperature max"].C}°C
+                  <strong>Temperature Max:</strong>{" "}
+                  {plant["Temperature max"]?.F ?? 0}
+                  °F / {plant["Temperature max"]?.C ?? 0}
+                  °C
                   <br />
                   <strong>Perfume:</strong> {plant.Perfume || "None"}
                   <br />
@@ -75,7 +83,7 @@ export default function PlantInfo({ plant }: Props) {
                   {plant["Color of blooms"] || "None"}
                   <br />
                   <strong>Blooming Season:</strong>{" "}
-                  {plant["Blooming season"] || "Varies"}
+                  {plant["Blooming season"] || "None"}
                   <br />
                   <strong>Climat:</strong> {plant.Climat}
                   <br />
@@ -89,12 +97,13 @@ export default function PlantInfo({ plant }: Props) {
                   <br />
                   <strong>Other Names:</strong> {plant["Other names"] || "None"}
                   <br />
-                  <strong>Description:</strong> {plant.Description}
+                  <strong>Description:</strong> {plant.Description ?? "None"}
                   <br />
                   <strong>URL:</strong> <a href={plant.Url}>{plant.Url}</a>
                   <br />
-                  <strong>Pot Diameter:</strong> {plant["Pot diameter (cm)"].M}{" "}
-                  m / {plant["Pot diameter (cm)"].CM} cm
+                  <strong>Pot Diameter:</strong>{" "}
+                  {plant["Pot diameter (cm)"]?.M ?? 0} m /{" "}
+                  {plant["Pot diameter (cm)"]?.CM ?? 0} cm
                 </p>
               </div>
             </div>

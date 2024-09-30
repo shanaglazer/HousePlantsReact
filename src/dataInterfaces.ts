@@ -1,11 +1,11 @@
 interface IMeasurement {
-  M: number;
-  CM: number;
+  M: number | null;
+  CM: number | null;
 }
 
 interface ITemperature {
-  F: number;
-  C: number;
+  F: number | null;
+  C: number | null;
 }
 
 export interface IPlant {
