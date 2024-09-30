@@ -10,7 +10,7 @@ export default function PlantInfo({ plant }: Props) {
       <div className="container">
         <div className="card m-3" style={{ width: "100%" }}>
           <div className="row g-0">
-            <div className="col-md-8">
+            <div className="col-8">
               <div className="card-body">
                 <h5 className="card-title">{plant["Latin name"]}</h5>
                 <p className="card-text">
@@ -98,11 +98,12 @@ export default function PlantInfo({ plant }: Props) {
                 </p>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-4">
               <img
                 src={plant.Img}
-                className="img-fluid rounded-start"
+                className="img-fluid w-100 rounded-start"
                 alt="plant img"
+                style={{ objectFit: "contain", height: "auto" }}
               />
             </div>
           </div>
