@@ -10,9 +10,9 @@ export default function PlantInfo({ plant }: Props) {
     defaultValue = "None"
   ) {
     return (
-      <p>
+      <div>
         <strong>{label}:</strong> {value ?? defaultValue}
-      </p>
+      </div>
     );
   }
 
@@ -24,7 +24,7 @@ export default function PlantInfo({ plant }: Props) {
             <div className="col-8">
               <div className="card-body">
                 <h5 className="card-title">{plant["Latin name"]}</h5>
-                <p className="card-text">
+                <div className="card-text">
                   {displayPlantAttribute(
                     "Common Name",
                     plant["Common name"].join(", ")
@@ -120,7 +120,7 @@ export default function PlantInfo({ plant }: Props) {
                       plant["Pot diameter (cm)"]?.CM ?? 0
                     } cm`
                   )}
-                </p>
+                </div>
               </div>
             </div>
             <div className="col-4">
