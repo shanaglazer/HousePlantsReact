@@ -50,7 +50,6 @@ export default function PlantList() {
         setLoading(true);
         const plantdata = await fetchData<IPlant[]>("all");
         setPlantData(plantdata);
-        //if i add a usestate for plantdata - refresh here
       } catch (error: any) {
         setError(
           error instanceof Error ? error.message : "Unknown error occurred"

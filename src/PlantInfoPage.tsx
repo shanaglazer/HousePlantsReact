@@ -2,48 +2,10 @@ import { useEffect, useState } from "react";
 import PlantInfo from "./PlantInfo";
 import { useParams } from "react-router-dom";
 import { IPlant } from "./dataInterfaces";
-import { fetchData } from "./dataUtil";
+import { blankPlant, fetchData } from "./dataUtil";
 
 export default function PlantInfoPage() {
-  const emptyPlant: IPlant = {
-    Categories: "",
-    Disease: "",
-    Img: "",
-    Use: [],
-    "Latin name": "",
-    Insects: [],
-    Avaibility: "",
-    Style: null,
-    Bearing: "",
-    "Light tolered": "",
-    "Height at purchase": { M: 0, CM: 0 },
-    "Light ideal": "",
-    "Width at purchase": { M: 0, CM: 0 },
-    id: "",
-    Appeal: "",
-    Perfume: null,
-    Growth: "",
-    "Width potential": { M: 0, CM: 0 },
-    "Common name (fr.)": null,
-    Pruning: "",
-    Family: "",
-    "Height potential": { M: 0, CM: 0 },
-    Origin: [],
-    Description: null,
-    "Temperature max": { F: 0, C: 0 },
-    "Blooming season": null,
-    Url: "",
-    "Color of leaf": [],
-    Watering: "",
-    "Color of blooms": null,
-    Zone: [],
-    "Common name": [],
-    "Available sizes (Pot)": "",
-    "Other names": null,
-    "Temperature min": { F: 0, C: 0 },
-    "Pot diameter (cm)": { M: 0, CM: 0 },
-    Climat: "",
-  };
+  const emptyPlant = blankPlant;
 
   const { id } = useParams();
   const [plant, setPlant] = useState<IPlant>(emptyPlant);
@@ -68,7 +30,11 @@ export default function PlantInfoPage() {
   }, [id]);
 
   if (error != "") {
-    return <div>Unable to complete the desired operation: {error}</div>;
+    return (
+      <div className="alert alert-danger">
+        Unable to complete the desired operation: {error}
+      </div>
+    );
   }
 
   return (

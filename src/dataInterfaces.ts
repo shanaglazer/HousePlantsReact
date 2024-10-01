@@ -51,11 +51,3 @@ export interface IPlant {
   export interface ICategory{
     Category: string;
   }
-
-  export interface IRequestOptions {
-    method: string;
-    headers: {
-      'x-rapidapi-key': string;
-      'x-rapidapi-host': string;
-    };
-  }

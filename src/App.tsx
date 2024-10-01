@@ -9,11 +9,6 @@ import Navbar from "./Navbar";
 function App() {
   return (
     <>
-      {/* <div className="container">
-        <div className="row">
-          <PlantList />
-        </div>
-      </div> */}
       <Navbar />
       <Router>
         <div className="container">
