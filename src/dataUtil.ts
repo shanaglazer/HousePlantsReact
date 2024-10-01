@@ -13,7 +13,7 @@ export async function fetchData<T>(url: string):Promise<T>{
      }
   );
   if (!response.ok) {
-    throw new Error(`HTTP error, status: ${response.status}`);//livdok im ani rotza
+    throw new Error(`HTTP error, status: ${response.status}`);
   }
   const data = response.json();
   return data;
